@@ -8,7 +8,7 @@ services:
       - .:/workdir
     ports:
       - 8888:8888
-    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+    command: jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.disable_check_xsrf=True
   code:
     build:
       context: .
@@ -17,4 +17,4 @@ services:
       - 8080:8080
     volumes:
       - ./:/workdir
-    entrypoint: "code-server --auth none --bind-addr=0.0.0.0:8080 /app"
+    entrypoint: "code-server --auth none --bind-addr=0.0.0.0:8080 /workdir"
