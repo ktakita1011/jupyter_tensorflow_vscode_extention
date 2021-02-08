@@ -1,0 +1,9 @@
+version: '3'
+services:
+  note:
+    build: .
+    volumes:
+      - .:/workdir
+    ports:
+      - 127.0.0.1:8888:8888
+    command: "jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.disable_check_xsrf=True"
