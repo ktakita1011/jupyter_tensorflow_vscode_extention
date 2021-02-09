@@ -8,7 +8,8 @@ also jupyter notebook 127.0.0.1:8888
 ```docker-compose up -d```
 
 # Caution
-Init passwor    d is null. So if you use set password.
+Init jupyter password is null. So if you use set password.
+code-server init password is 'password'
 
 # References
 https://qiita.com/dfurusaka/items/24263b8194cdf0af2298
