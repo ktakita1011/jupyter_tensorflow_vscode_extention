@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  jupyter:
+    build:
+      context: .
+      target: python
+    image: python:latest
+  code:
+    build:
+      context: .
+      target: code-server
+    image: code-server:latest

@@ -1,18 +1,14 @@
-version: "3"
+version: "3.4"
 services:
   jupyter:
-    build:
-      context: .
-      target: python
+    image: python:latest
     volumes:
       - .:/workdir
     ports:
       - 8888:8888
     command: jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.disable_check_xsrf=True
   code:
-    build:
-      context: .
-      target: code-server
+    image: code-server:latest
     ports:
       - 8080:8080
     volumes:
