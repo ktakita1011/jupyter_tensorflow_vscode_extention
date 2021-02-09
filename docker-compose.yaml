@@ -13,4 +13,6 @@ services:
       - 8080:8080
     volumes:
       - ./:/workdir
-    entrypoint: code-server --bind-addr=0.0.0.0:8080 /workdir --env PASSWORD='password' --auth=passowrd
+    environment:
+      PASSWORD: "password"
+    entrypoint: "code-server --bind-addr=0.0.0.0:8080 --auth=password /workdir"
